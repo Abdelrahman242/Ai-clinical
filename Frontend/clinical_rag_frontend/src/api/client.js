@@ -5,7 +5,10 @@ function getToken() {
 }
 
 async function request(path, { method = "GET", body, auth = true } = {}) {
-  const headers = { "Content-Type": "application/json" };
+  const headers = { 
+    "Content-Type": "application/json",
+    "x-daytona-preview-token": "h4ofuiw3i3briy2l634cohckoe0jl0cd"
+  };
   if (auth) {
     const token = getToken();
     if (token) headers["Authorization"] = `Bearer ${token}`;
@@ -47,7 +50,10 @@ export const api = {
     form.append("password", password);
     const res = await fetch(`${BASE_URL}/api/v1/auth/login`, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: { 
+        "Content-Type": "application/x-www-form-urlencoded",
+        "x-daytona-preview-token": "h4ofuiw3i3briy2l634cohckoe0jl0cd"
+      },
       body: form,
     });
     const data = await res.json();
