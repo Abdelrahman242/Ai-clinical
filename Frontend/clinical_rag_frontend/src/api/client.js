@@ -6,8 +6,7 @@ function getToken() {
 
 async function request(path, { method = "GET", body, auth = true } = {}) {
   const headers = { 
-    "Content-Type": "application/json",
-    "x-daytona-preview-token": "h4ofuiw3i3briy2l634cohckoe0jl0cd"
+    "Content-Type": "application/json"
   };
   if (auth) {
     const token = getToken();
