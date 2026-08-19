@@ -50,8 +50,7 @@ export const api = {
     const res = await fetch(`${BASE_URL}/api/v1/auth/login`, {
       method: "POST",
       headers: { 
-        "Content-Type": "application/x-www-form-urlencoded",
-        "x-daytona-preview-token": "h4ofuiw3i3briy2l634cohckoe0jl0cd"
+        "Content-Type": "application/x-www-form-urlencoded"
       },
       body: form,
     });
